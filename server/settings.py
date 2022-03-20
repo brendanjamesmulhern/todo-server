@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
+    'todo-server-2.herokuapp.com',
 ]
 
 
