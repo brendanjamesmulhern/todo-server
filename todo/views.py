@@ -46,9 +46,9 @@ def add_todo(request):
     else:
         return Response(todo.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET'])
+@api_view(['POST'])
 def get_one_todo(request):
-    items = Item.objects.all()
+    items = Item.objects.all(user_id=request.data['user_id'])
     serializer = ToDoSerializer(items, many=True)
     return Response(serializer.data)
     
